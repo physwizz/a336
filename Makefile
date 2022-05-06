@@ -383,6 +383,8 @@ include scripts/subarch.include
 # Note: Some architectures assign CROSS_COMPILE in their arch/*/Makefile
 ARCH		?= $(SUBARCH)
 
+CROSS_COMPILE=/home/grahame/toolchains/toolchain/prebuilts/gas/linux-x86/x86_64-linux-gnu-
+
 # Architecture as present in compile.h
 UTS_MACHINE 	:= $(ARCH)
 SRCARCH 	:= $(ARCH)
@@ -450,7 +452,9 @@ OBJDUMP		= llvm-objdump
 READELF		= llvm-readelf
 STRIP		= llvm-strip
 else
-CC		= $(CROSS_COMPILE)gcc
+# CC		= $(CROSS_COMPILE)gcc
+CC=/home/grahame/toolchains/toolchain/clang/host/linux-x86/clang-r416183b/bin/clang
+
 LD		= $(CROSS_COMPILE)ld
 AR		= $(CROSS_COMPILE)ar
 NM		= $(CROSS_COMPILE)nm
